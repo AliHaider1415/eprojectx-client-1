@@ -1,0 +1,1011 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+    body {
+      --bs-font-sans-serif: 'Outfit', sans-serif;
+      --bs-body-font-family: var(--bs-font-sans-serif);
+      --bs-font-monospace: 'VT323', monospace;
+    }
+
+        .promo-banner {
+          background-color: #B6CBD2; /* Light blue background */
+          color: #005c99; /* Dark blue text color */
+          padding: 10px 20px; /* Padding around the text */
+          border-radius: 12px; /* Rounded corners */
+          text-align: center; /* Center the text */
+          font-weight: bold; /* Make the text bold */
+          text-transform: uppercase; /* Uppercase text */
+        }
+
+        .product-title, .product-price{
+            color: #005c99;
+            font-weight: bold
+        }
+
+        .size-picker .btn{
+            color: #005c99;
+        }
+
+        .save-text, .offer-text, .price-text{
+            color: black;
+            font-weight: bold;
+            margin-top: -12px;
+        }
+
+        .price-text small s{
+            color: gray;
+        }
+
+
+        .circle {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+          }
+          
+          .circle-label input[type="radio"]:checked{
+            border: 3px solid black; /* Change the border to a different color when selected */
+        }
+
+        .add-cart-btn .btn{
+            background-color: #005c99
+        }
+
+
+        .vertical-line {
+            position: absolute;
+            top: 0; /* Aligns the line to the top of the container */
+            right: -10px; /* Space from the right side of the card */
+            height: 100%; /* Adjust height as needed; use 100% if you want it to fill the entire height */
+            width: 1px; /* Width of the vertical line */
+            background-color: #ccc; /* Color of the vertical line */
+            z-index: 1; /* Ensure it's above the background */
+        }
+        
+        .text-center.d-flex.align-items-center:last-child .vertical-line {
+            display: none; /* Hide the vertical line for the last card */
+        }
+
+
+        .accordian-item button{
+            font-weight: bold;
+        }
+
+
+        .dashed-line {
+            border: none; /* Remove default border */
+            border-top: 1px dashed #000; /* Add dashed line */
+            width: 100%; /* Make line span full width */
+            margin: 10px 0; /* Add margin for spacing */
+        }
+        
+        .font-weight-bold {
+            font-weight: bold; /* Make text bold */
+        }
+        
+        
+        .hover-effect {
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            overflow: visible; /* Allow overflow */
+            border-radius: 15px; /* Adjust this value to change the roundness */
+        }
+        
+        .hover-effect:hover {
+            transform: scale(1.15); /* Scale up by 15% */
+            background-color: #FEFCDF; /* Light gray background on hover */
+        }
+        
+        .dashed-line {
+            border: none;
+            border-top: 1px dashed #ccc;
+            margin: 10px 0; /* Adjust margin to fit your design */
+        }
+        
+          
+
+
+        
+
+      </style>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary px-5">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="Group 1000005350.png" alt="FEETS" width="100" height="27">
+              </a>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">All Collection</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Compression Socks</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Skincare</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Best Sellers</a>
+              </li>
+            </ul>
+            <span class="navbar-text">
+                <nav class="navbar bg-body-tertiary">
+                    <a class="navbar-brand" href="#">
+                        <img src="Component 2.png" alt="Bootstrap" width="25" height="24">
+                      </a>
+                        <a class="navbar-brand" href="#">
+                        <img src="user (1).png" alt="Bootstrap" width="25" height="24">
+                      </a>
+                      <a class="navbar-brand" href="#">
+                        <img src="Frame (3).png" alt="Bootstrap" width="20" height="20">
+                      </a>
+                      <a class="navbar-brand" href="#">
+                        <img src="Frame (4).png" alt="Bootstrap" width="20" height="20">
+                      </a>
+                  </nav>
+            </span>
+          </div>
+        </div>
+      </nav>
+
+
+
+      <div class="container my-5">
+        <div class="row">
+          <!-- Left Section: Product Images -->
+          <div class="col-md-6">
+            <div class="text-center">
+              <img src="Group 36.png" class="img-fluid mb-3" alt="Product Image">
+            </div>
+            <!-- Thumbnails -->
+            
+
+            <div class="row">
+                <div class="col-3">
+                    <img src="image.png" class="img-thumbnail" alt="Thumb 4">
+                  </div>
+                <div class="col-3">
+                  <img src="image (1).png" class="img-thumbnail" alt="Thumb 1">
+                </div>
+                <div class="col-3">
+                  <img src="image (2).png" class="img-thumbnail" alt="Thumb 2">
+                </div>
+                <div class="col-3">
+                    <img src="image 226.png" class="img-thumbnail" alt="Thumb 4">
+                  </div>
+                <div class="col-3">
+                  <img src="image (3).png" class="img-thumbnail" alt="Thumb 3">
+                </div>
+                <div class="col-3">
+                  <img src="image (4).png" class="img-thumbnail" alt="Thumb 4">
+                </div>
+                
+                <div class="col-3">
+                  <img src="image 227.png" class="img-thumbnail" alt="Thumb 4">
+                </div>
+                
+                <div class="col-3">
+                  <img src="image (4).png" class="img-thumbnail" alt="Thumb 4">
+                </div>
+              </div>
+              
+
+          </div>
+          
+          <!-- Right Section: Product Info -->
+          <div class="col-md-6">
+            <p class="text-uppercase text-align promo-banner">Up to 40% off grab it now!</p>
+            <h2 class="product-title">FLOWFIBER® Compression Socks - Vintage</h2>
+            <p><span class="">★★★★★</span> 19,223 Reviews</p>
+            <h3 class="product-price">$30.00</h3>
+            <hr>
+            
+            <!-- Pricing Offers -->
+            
+            <!-- Pricing Offers as Buttons -->
+            <div class="row text-center">
+                <div class="col-md-4">
+                <button class="btn btn-outline-primary w-100 p-3 mb-2 rounded pricing-btn">
+                    <p class="badge bg-primary save-text p-2">SAVE $9.00</p>
+                    <p class="offer-text">Buy 1</p>
+                    <p class="price-text">$30.00 <small><s>$40.00</s></small></p>
+                </button>
+                </div>
+                
+                <div class="col-md-4">
+                    <button class="btn btn-outline-primary w-100 p-3 mb-2 rounded pricing-btn">
+                        <p class="badge bg-primary save-text p-2">SAVE $9.00</p>
+                        <p class="offer-text">Buy 1</p>
+                        <p class="price-text">$30.00 <small><s>$40.00</s></small></p>
+                    </button>
+
+                </div>
+                    
+                <div class="col-md-4">
+                        <button class="btn btn-outline-primary w-100 p-3 mb-2 rounded pricing-btn">
+                            <p class="badge bg-primary save-text p-2">SAVE $9.00</p>
+                            <p class="offer-text">Buy 1</p>
+                            <p class="price-text">$30.00 <small><s>$40.00</s></small></p>
+                        </button>
+                </div>
+                        
+            </div>
+  
+  
+  
+            
+            <!-- Color Picker -->
+            <p class="fw-bold">Pick Your Favorite Color</p>
+            <!-- Circle Radio Buttons -->
+
+
+            <div class="d-flex mb-3">
+                <label class="me-2 circle-label">
+                    <input type="radio" name="color" value="#D1C3A3" class="d-none">
+                    <div class="border rounded-circle p-2 circle" style="background-color: #D1C3A3;"></div>
+                </label>
+                <label class="me-2 circle-label">
+                    <input type="radio" name="color" value="#A7B5A5" class="d-none">
+                    <div class="border rounded-circle p-2 circle" style="background-color: #A7B5A5;"></div>
+                </label>
+                <label class="me-2 circle-label">
+                    <input type="radio" name="color" value="#CED2C4" class="d-none">
+                    <div class="border rounded-circle p-2 circle" style="background-color: #CED2C4;"></div>
+                </label>
+                <label class="circle-label">
+                    <input type="radio" name="color" value="#423D3A" class="d-none">
+                    <div class="border rounded-circle p-2 circle" style="background-color: #423D3A;"></div>
+                </label>
+            </div>
+            
+            
+            
+  
+            
+            <!-- Size Picker -->
+            <p class="fw-bold size-picker">Size <a href="#" class="">What's my size?</a></p>
+            <div class="d-flex mb-3 size-picker">
+              <button class="btn btn-outline-primary me-2">S/M</button>
+              <button class="btn btn-outline-primary me-2">S/M WIDE</button>
+              <button class="btn btn-outline-primary me-2">L/XL</button>
+              <button class="btn btn-outline-primary">L/XL WIDE</button>
+            </div>
+    
+            <!-- Add to Cart Button -->
+            <button class="add-cart-btn btn w-100 rounded-pill d-flex justify-content-center align-items-center p-3" style = "background-color: #005c99; color: white;">
+                <i class="fas fa-shopping-cart me-2"><img src="ion_cart.png" alt="Cart" width="30" height="30"></i> ADD TO CART <span class="ms-2">→</span>
+            </button>
+  
+    
+            <!-- Shipping and Returns Info -->
+            <div class="d-flex my-5">
+                <div class="text-center d-flex align-items-center me-3 pe-3 position-relative">
+                    <img src="Frame (1).png" alt="Free Shipping" width="45" height="35" class="me-2">
+                    <p class="mb-0 text-start small">Free Shipping on Orders of $100 or More</p>
+                    <div class="vertical-line"></div>
+                </div>
+                <div class="text-center d-flex align-items-center me-3 pe-3 position-relative">
+                    <img src="Frame.png" alt="Free Returns" width="45" height="35" class="me-2">
+                    <p class="mb-0 text-start small">Free Returns & Exchanges</p>
+                    <div class="vertical-line"></div>
+                </div>
+                <div class="text-center d-flex align-items-center pe-3 position-relative">
+                    <img src="Frame (2).png" alt="Money Back" width="45" height="35" class="me-2">
+                    <p class="mb-0 text-start small">30 Day Money Back Guarantee</p>
+                    <div class="vertical-line"></div>
+                </div>
+            </div>
+            
+            
+            
+    
+            <!-- Promotions -->
+            <div class="" style="color: #005c99;">
+                <div class="d-flex justify-content-between align-items-center promo-banner">
+                    <h5 class="fw-bold mb-0">FALL SALE</h5>
+                    <p class="text-muted mb-0">Mix Any Style, Color or Size</p>
+                </div>
+
+                <div class="d-flex justify-content-between text-center">
+                    <div class="py-3" style="width: 30%;">
+                        <div class="text-white rounded-pill p-2 mb-2" style="background-color: #005c99;">
+                            <h6 class="fw-bold m-0">2 Items</h6>
+                        </div>
+                        
+                        <h3 class="fw-bold" style="color: #005c99;">10% <small>OFF</small></h3>
+                        <p class="fw-bold m-0" style="color: #005c99;">+ FREE SHIPPING</p>
+                        <div class="vertical-line-blue"></div>
+                    </div>
+
+                    <div class="p-3" style="width: 30%;">
+                        <div class="text-white rounded-pill p-2 mb-2" style="background-color: #005c99;">
+                            <h6 class="fw-bold m-0">4 Items</h6>
+                        </div>
+                        <h3 class="fw-bold" style="color: #005c99;">25% <small>OFF</small></h3>
+                        <p class="fw-bold m-0" style="color: #005c99;">+ FREE SHIPPING</p>
+                        <div class="vertical-line-blue"></div>
+                    </div>
+
+                    <div class="py-3" style="width: 30%;">
+                        <div class="text-white rounded-pill p-2 mb-2" style="background-color: #005c99;">
+                            <h6 class="fw-bold m-0">6+ Items</h6>
+                        </div>
+                        <h3 class="fw-bold" style="color: #005c99;">30% <small>OFF</small></h3>
+                        <p class="fw-bold m-0" style="color: #005c99;">+ FREE SHIPPING</p>
+                        <div class="vertical-line-blue"></div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        <!-- Accordion Section -->
+            <div class="accordion mt-4" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Compression Sock Benefits
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Details about compression sock benefits go here.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            When to Use
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Details about when to use compression socks go here.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Fabric and Care
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Details about fabric and care go here.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Sizing
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Details about sizing go here.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+          </div>
+        </div>
+
+
+
+        <section class="d-flex flex-column align-items-center my-5" style = "background-color: #F7F7F7">
+            <h2 class = "mt-5">As Seen In</h2>
+            <div class="d-flex flex-wrap justify-content-center mt-3 my-5" style = "gap: 40px">
+                <img src="ASA BLACK SVG.png" alt="FEETS">
+                <img src="DS BLACK SVG.png" alt="FEETS">
+                <img src="ENTREPRENEUR BLACK SVG.png" alt="FEETS">
+                <img src="SNOR LAB BLACK SVG.png" alt="FEETS">
+                <img src="verywell health Black svg.png" alt="FEETS">
+            </div>
+        </section>
+
+
+        <<section class="d-flex flex-column align-items-center text-center" style="margin-top: 100px">
+
+            <h2>Key Features and Benefits FEETS</h2>
+            <p>Its lightly lined and carefully made with our signature silky-soft microfiber fabric for full coverage, and full comfort.</p>
+        
+            <div class="d-flex flex-column flex-md-row justify-content-center align-items-center my-5">
+        
+                <!-- Left Column -->
+                <div class="d-flex flex-column gap-5 mb-4 mb-md-0">
+        
+                    <div class="d-flex flex-column align-items-center">
+                        <img src="image (5).png" alt="" width="60" height="60" class="img-fluid">
+                        <h3>Comfort and Cushioning</h3>
+                        <p class="text-center">Socks provide a layer of cushioning between your feet and shoes.</p>
+                    </div>
+        
+                    <div class="d-flex flex-column align-items-center">
+                        <img src="image (6).png" alt="" width="60" height="60" class="img-fluid">
+                        <h3>Moisture Management</h3>
+                        <p class="text-center">Socks help absorb sweat and moisture, keeping your feet dry.</p>
+                    </div>
+        
+                </div>
+        
+                <!-- Center Image -->
+                <div class="my-4 my-md-0">
+                    <img src="Group 1000005365.png" alt="" class="img-fluid" style="max-width: 100%; padding: 20px;">
+                </div>
+        
+                <!-- Right Column -->
+                <div class="d-flex flex-column gap-5">
+        
+                    <div class="d-flex flex-column align-items-center">
+                        <img src="image (7).png" alt="" width="60" height="60" class="img-fluid">
+                        <h3>Temperature Regulation</h3>
+                        <p class="text-center">Socks help keep your feet warm in cold weather and can also help cool your feet.</p>
+                    </div>
+        
+                    <div class="d-flex flex-column align-items-center">
+                        <img src="image (8).png" alt="" width="60" height="60" class="img-fluid">
+                        <h3>Protection from Injuries</h3>
+                        <p class="text-center">Wearing socks can protect your feet from cuts, scrapes, and other injuries.</p>
+                    </div>
+        
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section class="d-flex flex-column flex-lg-row" style="background-image: url('Rectangle 230.png'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 40px;">
+            
+                <img src="HCH_0044.png" alt="" style="max-width: 100%; height: auto; object-fit: cover;">
+            
+        
+                <div class="d-flex flex-column flex-lg-row rounded" style="background-color: white; flex: 2; padding: 20px;">
+                    <div class="hover-effect d-flex flex-column align-items-center justify-content-between" style="flex: 1; padding: 20px;">
+                        <p class="font-weight-bold">Fabric Quality</p>
+                        <hr class="dashed-line" style="width: 100%; margin: 5px 0;">
+                        <p class="font-weight-bold">Compression Level</p>
+                        <hr class="dashed-line" style="width: 100%; margin: 5px 0;">
+                        <p class="font-weight-bold">Cushioning</p>
+                        <hr class="dashed-line" style="width: 100%; margin: 5px 0;">
+                        <p class="font-weight-bold">Durability</p>
+                        <hr class="dashed-line" style="width: 100%; margin: 5px 0;">
+                        <p class="font-weight-bold">Design</p>
+                        <hr class="dashed-line" style="width: 100%; margin: 5px 0;">
+                    </div>
+                
+                    <div class="hover-effect d-flex flex-column align-items-center justify-content-between" style="flex: 1; padding: 20px;">
+                        <img src="Group 1000005350 (1).png" alt="" height="30">
+                        <div class="d-flex align-items-center mt-2">
+                            <img src="image (27).png" alt="Icon" style="width: 24px; height: 24px; margin-right: 8px;">
+                            <p class="font-weight-bold">Soft, breathable, & comfort.</p>
+                        </div>
+                        <hr class="dashed-line" style="width: 100%; margin: 5px 0;">
+                        
+                        <div class="d-flex align-items-center">
+                            <img src="image (28).png" alt="Icon" style="width: 24px; height: 24px; margin-right: 8px;">
+                            <p class="font-weight-bold">Zones enhance circulation.</p>
+                        </div>
+                        <hr class="dashed-line" style="width: 100%; margin: 5px 0;">
+                        
+                        <div class="d-flex align-items-center">
+                            <img src="image (29).png" alt="Icon" style="width: 24px; height: 24px; margin-right: 8px;">
+                            <p class="font-weight-bold">Comfort prevents blisters.</p>
+                        </div>
+                        <hr class="dashed-line" style="width: 100%; margin: 5px 0;">
+                        
+                        <div class="d-flex align-items-center">
+                            <img src="image (30).png" alt="Icon" style="width: 24px; height: 24px; margin-right: 8px;">
+                            <p class="font-weight-bold">Durable, reinforced quality.</p>
+                        </div>
+                        <hr class="dashed-line" style="width: 100%; margin: 5px 0;">
+                        
+                        <div class="d-flex align-items-center">
+                            <img src="image (25).png" alt="Icon" style="width: 24px; height: 24px; margin-right: 8px;">
+                            <p class="font-weight-bold">Sleek, versatile design.</p>
+                        </div>
+                        <hr class="dashed-line" style="width: 100%; margin: 5px 0;">
+                    </div>
+                    
+                
+                    <div class="hover-effect d-flex flex-column align-items-center justify-content-between" style="flex: 1; padding: 20px;">
+                        <h4>Other Socks</h4>
+                        <div class="d-flex flex-column align-items-start">
+                            <div class="d-flex align-items-center">
+                                <img src="image (9).png" alt="icon" style="width: 24px; height: 24px; margin-right: 8px;">
+                                <p class="font-weight-bold">Moisture, uncomfortable fabric.</p>
+                            </div>
+                            <hr class="dashed-line" style="width: 100%; margin: 5px 0;">
+                            <div class="d-flex align-items-center">
+                                <img src="image (9).png" alt="icon" style="width: 24px; height: 24px; margin-right: 8px;">
+                                <p class="font-weight-bold">Unsupported compression format</p>
+                            </div>
+                            <hr class="dashed-line" style="width: 100%; margin: 5px 0;">
+                            <div class="d-flex align-items-center">
+                                <img src="image (9).png" alt="icon" style="width: 24px; height: 24px; margin-right: 8px;">
+                                <p class="font-weight-bold">Insufficient padding discomfort</p>
+                            </div>
+                            <hr class="dashed-line" style="width: 100%; margin: 5px 0;">
+                            <div class="d-flex align-items-center">
+                                <img src="image (9).png" alt="icon" style="width: 24px; height: 24px; margin-right: 8px;">
+                                <p class="font-weight-bold">Rapid durability issues</p>
+                            </div>
+                            <hr class="dashed-line" style="width: 100%; margin: 5px 0;">
+                            <div class="d-flex align-items-center">
+                                <img src="image (9).png" alt="icon" style="width: 24px; height: 24px; margin-right: 8px;">
+                                <p class="font-weight-bold">Basic design that lacks style.</p>
+                            </div>
+                            <hr class="dashed-line" style="width: 100%; margin: 5px 0;">
+                        </div>
+                    </div>
+                </div>
+                
+        </section>
+        
+        
+
+        <section class="d-flex flex-column flex-lg-row" style="background-color: #FEFCDF; padding: 100px;">
+            <div class="mb-5 mb-lg-0" style="flex: 0 0 30%;">
+                <h2>Look At How Others Are Loving Their Bleame</h2>
+                <p>Real Reviews From Real People</p>
+            
+                <button class="mt-4 bg-dark text-white" style="border-radius: 100px; padding: 20px 40px;">CLAIM OFFER</button>
+                <br>
+            
+                <img class="mt-4 img-fluid" src="Frame 154.png" alt="" style="max-width: 100%;">
+            </div>
+            
+            <div id="carouselExampleIndicators" class="carousel slide" style="flex: 0 0 70%;">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <!-- First carousel item with three images -->
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-around" style="height: 300px;">
+                            <img src="image (10).png" class="d-block" alt="Image 1" style="width: 30%; height: auto; object-fit: cover;">
+                            <img src="image (11).png" class="d-block" alt="Image 2" style="width: 30%; height: auto; object-fit: cover;">
+                            <img src="image (12).png" class="d-block" alt="Image 3" style="width: 30%; height: auto; object-fit: cover;">
+                        </div>
+                    </div>
+                    
+                    <!-- Second carousel item with three images -->
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-around" style="height: 300px;">
+                            <img src="image (10).png" class="d-block" alt="Image 1" style="width: 30%; height: auto; object-fit: cover;">
+                            <img src="image (11).png" class="d-block" alt="Image 2" style="width: 30%; height: auto; object-fit: cover;">
+                            <img src="image (12).png" class="d-block" alt="Image 3" style="width: 30%; height: auto; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            
+            
+        </section>
+        
+
+
+
+
+        <section class = "d-flex flex-column justify-content-center align-items-center" style = "background-color:#F7F7F7; padding: 80px 0px;">
+
+            <h2 class = "text-center" style = "margin-bottom: 50px;">Join the Sock Society
+                Where Every Thread Tells a Story
+            </h2>
+
+
+            <div class="container">
+                <div class="row">
+                    <!-- First image -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4"> <!-- Adjust column size -->
+                        <img src="image (21).png" class="img-fluid" alt="Image 1" style="height: 300px; width: 100%; object-fit: cover; border-radius: 15px;"> <!-- Added border-radius -->
+                    </div>
+            
+                    <!-- Second image -->
+                    <div class="col-12 col-md-6 col-lg-6 mb-4"> <!-- Adjust column size -->
+                        <img src="image (22).png" class="img-fluid" alt="Image 2" style="height: 300px; width: 100%; object-fit: cover; border-radius: 15px;"> <!-- Added border-radius -->
+                    </div>
+            
+                    <!-- Third image -->
+                    <div class="col-12 col-md-6 col-lg-3 mb-4"> <!-- Adjust column size -->
+                        <img src="image (24).png" class="img-fluid" alt="Image 3" style="height: 300px; width: 100%; object-fit: cover; border-radius: 15px;"> <!-- Added border-radius -->
+                    </div>
+            
+                    <!-- Fourth image -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4" style="display: flex; justify-content: center;">
+                        <img src="Group 1000005352.png" class="img-fluid" alt="Image 4" style="height: 300px; width: 100%; object-fit: cover; border-radius: 15px;"> <!-- Added border-radius -->
+                    </div>
+            
+                    <!-- Fifth image -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4" style="display: flex; justify-content: center;">
+                        <img src="HCH_0068.png" class="img-fluid" alt="Image 5" style="height: 300px; width: 150%; object-fit: cover; border-radius: 15px;"> <!-- Added border-radius -->
+                    </div>
+            
+                    <!-- Sixth image -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4" style="display: flex; justify-content: center;">
+                        <img src="image (15).png" class="img-fluid" alt="Image 6" style="height: 300px; width: 100%; object-fit: cover; border-radius: 15px;"> <!-- Added border-radius -->
+                    </div>
+            
+                    <!-- Seventh image -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <img src="image (15).png" class="img-fluid w-100" alt="Image 7" style="height: 300px; object-fit: cover; border-radius: 15px;"> <!-- Added border-radius -->
+                    </div>
+            
+                    <!-- Eighth image -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <img src="image (14).png" class="img-fluid w-100" alt="Image 8" style="height: 300px; object-fit: cover; border-radius: 15px;"> <!-- Added border-radius -->
+                    </div>
+            
+                    <!-- Ninth image -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <img src="image (13).png" class="img-fluid w-100" alt="Image 9" style="height: 300px; object-fit: cover; border-radius: 15px;"> <!-- Added border-radius -->
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+
+        </section>
+
+
+
+        <section class = "d-flex flex-column justify-content-center align-items-center" style = "padding: 80px 0px;">
+
+            <h2 class = "text-center" style = "margin-bottom: 50px;">
+               You May Also Like
+            </h2>
+
+
+            <div class="container my-5">
+                <div class="row">
+                    <!-- Product Card 1 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card h-100" style="border: none;">
+                            <img src="image (16).png" class="card-img-top" alt="Product Image 1" style="height: 200px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title font-weight-bold">Product Title 1</h5>
+                                <p class="card-text text-muted font-weight-bold">$29.99</p>
+                                <div class="rating d-flex align-items-center">
+                                    
+                                    <span class="text-warning">&#9733;</span>
+                                    <span class="text-warning">&#9733;</span>
+                                    <span class="text-warning">&#9733;</span>
+                                    <span class="text-warning">&#9733;</span>
+                                    <span class="text-secondary">&#9733;</span>
+                                    <span class="mr-2 text-dark">4.5</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Product Card 2 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card h-100" style="border: none;">
+                            <img src="image (17).png" class="card-img-top" alt="Product Image 2" style="height: 200px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title font-weight-bold">Product Title 2</h5>
+                                <p class="card-text text-muted font-weight-bold">$19.99</p>
+                                <div class="rating d-flex align-items-center">
+                                   
+                                    <span class="text-warning">&#9733;</span>
+                                    <span class="text-warning">&#9733;</span>
+                                    <span class="text-warning">&#9733;</span>
+                                    <span class="text-secondary">&#9733;</span>
+                                    <span class="text-secondary">&#9733;</span>
+                                    <span class="mr-2 text-dark">4.0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Product Card 3 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card h-100" style="border: none;">
+                            <img src="image (18).png" class="card-img-top" alt="Product Image 3" style="height: 200px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title font-weight-bold">Product Title 3</h5>
+                                <p class="card-text text-muted font-weight-bold">$39.99</p>
+                                <div class="rating d-flex align-items-center">
+                                    
+                                    <span class="text-warning">&#9733;</span>
+                                    <span class="text-warning">&#9733;</span>
+                                    <span class="text-warning">&#9733;</span>
+                                    <span class="text-warning">&#9733;</span>
+                                    <span class="text-warning">&#9733;</span>
+                                    <span class="mr-2 text-dark">4.0</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Product Card 4 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card h-100" style="border: none;">
+                            <img src="image (19).png" class="card-img-top" alt="Product Image 4" style="height: 200px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title font-weight-bold">Product Title 4</h5>
+                                <p class="card-text text-muted font-weight-bold">$24.99</p>
+                                <div class="rating d-flex align-items-center">
+                                    
+                                    <span class="text-warning">&#9733;</span>
+                                    <span class="text-warning">&#9733;</span>
+                                    <span class="text-secondary">&#9733;</span>
+                                    <span class="text-secondary">&#9733;</span>
+                                    <span class="text-secondary">&#9733;</span>
+                                    <span class="mr-2 text-dark">4.0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Add more product cards as needed -->
+                </div>
+            </div>
+            
+        
+         
+        </section>
+
+
+
+        <!-- Instagram-style Gradient Section -->
+<section class="instagram-section py-5" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);">
+    <div class="container text-white text-center">
+        <!-- Heading with Instagram icon -->
+        <h2 class="mb-4">
+            <i class="fab fa-instagram"></i> Do it with Instagram Community
+            <img src="mdi_instagram.png" alt="Your Image" style="width: 40px; height: 40px; object-fit: cover; margin-left: 10px;">
+        </h2>
+        
+        
+        <!-- Paragraph -->
+        <p class="lead mb-5">
+            Inspire and let yourself be inspired, from one unique fashion to another.
+        </p>
+
+        <!-- Grid of 5 columns with images -->
+        <div class="row">
+            <!-- Image 1 -->
+            <div class="col-6 col-sm-4 col-md-3 col-lg mb-4">
+                <img src="image (20).png" class="img-fluid w-100" alt="Instagram Image 1">
+            </div>
+            <!-- Image 2 -->
+            <div class="col-6 col-sm-4 col-md-3 col-lg mb-4">
+                <img src="image (21).png" class="img-fluid w-100" alt="Instagram Image 2">
+            </div>
+            <!-- Image 3 -->
+            <div class="col-6 col-sm-4 col-md-3 col-lg mb-4">
+                <img src="image (22).png" class="img-fluid w-100" alt="Instagram Image 3">
+            </div>
+            <!-- Image 4 -->
+            <div class="col-6 col-sm-4 col-md-3 col-lg mb-4">
+                <img src="image (23).png" class="img-fluid w-100" alt="Instagram Image 4">
+            </div>
+            <!-- Image 5 -->
+            <div class="col-6 col-sm-4 col-md-3 col-lg mb-4">
+                <img src="image (24).png" class="img-fluid w-100" alt="Instagram Image 5">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class = "pt-5 pb-5" style="background-color: black; display: flex; justify-content: center; text-align: center;">
+    <div>
+        <h2 class="text-white">SUBSCRIBE  AND GET DISCOUNT NOW</h2>
+        <div style="background-color: white; border: 2px solid white; margin: 20px auto; padding: 50px; border-radius: 30px;">
+            <img src="Group 1000005342.png" alt="" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        
+    </div>
+</section>
+
+
+<section style="background-color: #EFEFEF;">
+    <div class="container pt-5">
+        <div class="row justify-content-center">
+            <div class="col-auto text-center d-flex align-items-center me-3 pe-3 position-relative mb-2">
+                <img src="image 6.png" alt="Free Shipping" width="45" height="35" class="me-2">
+                <p class="mb-0 text-start small fw-bold">FREE EXPEDITED SHIPPING $59+</p>
+                <div class="vertical-line"></div>
+            </div>
+            <div class="col-auto text-center d-flex align-items-center me-3 pe-3 position-relative mb-2">
+                <img src="image (25).png" alt="Free Returns" width="45" height="35" class="me-2">
+                <p class="mb-0 text-start small fw-bold">Subscribe to Get 15% Off 2Pcs+</p>
+                <div class="vertical-line"></div>
+            </div>
+            <div class="col-auto text-center d-flex align-items-center pe-3 position-relative mb-2">
+                <img src="image (26).png" alt="Money Back" width="45" height="35" class="me-2">
+                <p class="mb-0 text-start small fw-bold">Easy Returns Within 30 Days</p>
+                <div class="vertical-line"></div>
+            </div>
+        </div>
+    </div>
+
+    <hr style="border: 1px solid #ccc; margin: 20px 0;">
+
+
+    
+    <!-- Footer -->
+<footer class="text-center text-lg-start text-muted">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block">
+        <span>Get connected with us on social networks:</span>
+      </div>
+      <!-- Left -->
+  
+      <!-- Right -->
+      <div>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+  
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>Company name
+            </h6>
+            <p>
+              Here you can use rows and columns to organize your footer content. Lorem ipsum
+              dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Products
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Angular</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">React</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Vue</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Laravel</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Useful links
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Pricing</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Settings</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Orders</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Help</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              info@example.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-4">
+      © 2021 Copyright:
+      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+  
+
+
+</section>
+
+
+
+
+
+        
+    
+        
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
